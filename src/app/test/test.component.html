@@ -6,11 +6,28 @@
 
     <label for="name">Product name</label>
     <input id="name" class="form-control" type="text" name="name" [(ngModel)]="productName">
+    <label for="price">Product price</label>
+    <input id="price" class="form-control" type="text" name="price" [(ngModel)]="productPrice">
     <button class="btn btn-primary mt-3" type="submit" (click)="add()">Add to cart</button>
   </div>
 
-  <h3 *ngFor="let product of products">
-    {{product}}
-  </h3>
+  <table class="table table-dark table-hover table-bordered border-danger">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">ProductName</th>
+        <th scope="col">ProductPrice</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <th>{{products.indexOf(product)}}</th>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+
 
 </div>
